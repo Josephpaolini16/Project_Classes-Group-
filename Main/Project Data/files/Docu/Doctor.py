@@ -95,12 +95,12 @@ class Doctor:
                                                                     self.doctors_list[i].qualification,
                                                                     self.doctors_list[i].roomNb))
         self.doctors_list.clear()
-
+# Method for writing in the text file
     def writeListOfDoctorsToFile(self):
         f = open("doctors.txt", "w")
         for lines in self.doctors_list:
             f.write(lines)
-
+#method adding doctor info on the text file
     def addDrToFile(self):
         f = open("doctors.txt", "a")
         f.write("\n" + Doctor().enterDrInfo())
