@@ -1,3 +1,4 @@
+# This class displays the ID, Name, Disease, Gender, and Age of the patients
 class Patient:
 
     patient_list = []
@@ -11,7 +12,7 @@ class Patient:
 
     def formatPatientInfo(self):
         return f"{self.pid}_{self.name}_{self.disease}_{self.gender}_{self.age}"
-
+# You can add patients by calling this method
     def enterPatientInfo(self):
         self.pid = input("Enter Patient id:\n")
         self.name = input("Enter Patient name:\n")
@@ -28,7 +29,7 @@ class Patient:
             inx = line.split("_")
             patientObject = Patient(inx[0], inx[1], inx[2], inx[3], inx[4])
             self.patient_list.append(patientObject)
-
+# This method will help you to search patients by entering their ID
     def searchPatientById(self):
         self.pid = input("Enter the Patient ID:\n")
         f = open("patients.txt", "r")
@@ -41,14 +42,15 @@ class Patient:
                 break
         else:
             print("Can't find the Patient with the same id on the system")
-
+# The system will show you the patients information once you call this method
     def displayPatientInfo(self):
         for i in range(len(self.patient_list)):
             print("{:<5}{:<23}{:<16}{:<16}{:<15}".format(self.patient_list[i].pid, self.patient_list[i].name,
                                                          self.patient_list[i].disease, self.patient_list[i].gender,
                                                          self.patient_list[i].age))
         self.patient_list.clear()
-
+# This method allows you to edit the patients information by entering their ID, the system will ask you to enter the information of the patient
+# and will update the system
     def editPatientInfo(self):
         self.pid = input("Please enter the id of the Patient that you want to edit their information:\n")
         f = open("patients.txt", "r")
@@ -74,7 +76,8 @@ class Patient:
         f = open("patients.txt", "w")
         for lines in self.patient_list:
             f.write(lines)
-
+# This method allows you to add patients to the system, it will ask you to enter the patient's ID, Name, Disease, Gender, and Age
+# and will update the system.
     def addPatientToFile(self):
         f = open("patients.txt", "a")
         f.write("\n" + Patient().enterPatientInfo())
