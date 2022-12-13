@@ -1,9 +1,20 @@
+# Group 13
+# Jean Pascua
+# Justine Barredo
+# Joe Paolini
+# This Alberta Health Management System demonstrate the system inside a particular Hospital.
+# With the help of this system, the management can see the Doctor's information along with their availability.
+# It allows the management to add, edit, and search Doctors, Facilities, Laboratory, and Patients.
+# The system has the ability to calculate the cost of your medical expenses.
+# Only the management or authorized personnels can utilize the system because of its features.
+
+# Classes
 from Doctor import Doctor
 from Facility import Facility
 from Laboratory import Laboratory
 from Patient import Patient
 
-
+#  Display the categories, you can choose and access any of these categories by calling their respective classes and methods
 class Management:
 
     def DisplayMenu(self):
@@ -14,7 +25,7 @@ class Management:
                          "2 - 	Facilities\n"
                          "3 - 	Laboratories\n"
                          "4 - 	Patients\n")
-
+# Class named "Doctor" will be call on this condition
             if menu == "1":
                 while True:
                     doc = input("Doctors Menu:\n"
@@ -44,6 +55,7 @@ class Management:
                         print("\nBack to the previous Menu\n")
                     else:
                         Management().DisplayMenu()
+# Class named "Facility" will be call on this condition
             elif menu == "2":
                 while True:
                     fac = input("Facilities Menu:\n"
@@ -58,6 +70,7 @@ class Management:
                         print("\nBack to the previous Menu\n")
                     else:
                         Management().DisplayMenu()
+#  Class named "Lab" will be call on this condition
             elif menu == "3":
                 while True:
                     lab = input("Laboratories Menu\n"
@@ -73,6 +86,7 @@ class Management:
                         print("\nBack to the previous Menu\n")
                     else:
                         Management().DisplayMenu()
+#  Class named "Patient" will be call on this condition
             elif menu == "4":
                 while True:
                     pat = input("Patients Menu:\n"
